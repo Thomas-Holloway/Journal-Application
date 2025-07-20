@@ -6,3 +6,13 @@
 //  Swift 6.0, macOS 15.5
 
 import Foundation
+import UIKit
+
+class HomeViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+    }
+}
