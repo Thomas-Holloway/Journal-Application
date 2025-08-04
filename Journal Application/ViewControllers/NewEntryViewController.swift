@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+/// <#Description#>
 class NewEntryViewController: UIViewController {
     
     override func viewDidLoad() {
