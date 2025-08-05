@@ -1,5 +1,5 @@
 // 
-//  NewEntryViewController.swift
+//  NewReviewViewController.swift
 //  Journal Application
 //
 //  Created by Thomas Holloway on 5/8/2025

@@ -1,5 +1,5 @@
 // 
-//  NewEntryViewController.swift
+//  EntrySearchViewController.swift
 //  Journal Application
 //
 //  Created by Thomas Holloway on 5/8/2025
