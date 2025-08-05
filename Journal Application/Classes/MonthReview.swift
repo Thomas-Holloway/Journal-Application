@@ -1,4 +1,4 @@
-// 
+//
 //  MonthReview.swift
 //  Journal Application
 //
@@ -7,15 +7,15 @@
 
 import Foundation
 
-/// <#Description#>
+/// Month review
 class MonthReview: JournalEntry {
     var month: Int
     var year: Int
     
-    init(title: String, content: String, month: Int, year: Int) {
+    init(title: String, content: String, date: Date, dateCreated: Date, month: Int, year: Int) {
         self.month = month
         self.year = year
-        super.init(title: title, content: content)
+        super.init(title: title, content: content, date: date, dateCreated: dateCreated)
     }
     
     required init(from decoder: Decoder) throws {
@@ -36,5 +36,5 @@ class MonthReview: JournalEntry {
         case month
         case year
     }
-
+    
 }

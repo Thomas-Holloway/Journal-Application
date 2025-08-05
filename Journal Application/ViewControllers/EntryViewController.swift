@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-/// <#Description#>
+/// Screen for viewing and/or editing full entries.
+/// Recieves information about the journal entry to display from the Home View
 class EntryViewController: UIViewController {
     
     /// <#Description#>
@@ -30,6 +31,7 @@ class EntryViewController: UIViewController {
         if let entry = journalEntry {
             txfEntryTitle.text = entry.title
             txvEntryContent.text = entry.content
+            lblEntryDate.text = entry.date.formatted()
         }
     
 /* Label Styling */
@@ -61,7 +63,7 @@ class EntryViewController: UIViewController {
                   let heading = txfEntryTitle.text,
                   let entryIndex = entryIndex else { return }
             
-            let updatedEntry = JournalEntry(title: heading, content: updatedText)
+            let updatedEntry = JournalEntry(title: heading, content: updatedText, date: Date.now, dateCreated: Date.now)
             delegate?.didUpdateJournalEntry(updatedEntry, at: entryIndex)
         }
     }

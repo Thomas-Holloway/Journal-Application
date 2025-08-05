@@ -1,4 +1,4 @@
-// 
+//
 //  YearReview.swift
 //  Journal Application
 //
@@ -7,13 +7,13 @@
 
 import Foundation
 
-/// <#Description#>
+/// Year review
 class YearReview: JournalEntry {
     var year: Int
     
-    init(title: String, content: String, year: Int) {
+    init(title: String, content: String, date: Date, dateCreated: Date, year: Int) {
         self.year = year
-        super.init(title: title, content: content)
+        super.init(title: title, content: content, date: date, dateCreated: dateCreated)
     }
     
     required init(from decoder: Decoder) throws {

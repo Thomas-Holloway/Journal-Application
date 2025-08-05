@@ -26,6 +26,9 @@
 			exceptions = (
 				3571DCA82DDBEF8A004528BA /* Exceptions for "Journal Application" folder in "Journal Application" target */,
 			);
+			explicitFileTypes = {
+				Notes.md = net.daringfireball.markdown;
+			};
 			path = "Journal Application";
 			sourceTree = "<group>";
 		};

@@ -12,13 +12,14 @@ class JournalEntry: Codable {
     var title: String
     var content: String
 // TODO: Figure out how to implement Date
-//    var date: Date /* Date entry is being made for */
-//    var dateCreated: Date /* Date the entry was made */
+    var date: Date /* Date entry is being made for */
+    var dateCreated: Date /* Date the entry was made */
     
-    init(title: String, content: String/*, date: Date*/) {
+    init(title: String, content: String, date: Date, dateCreated: Date) {
         self.title = title
         self.content = content
-//        self.date = date
+        self.date = date
+        self.dateCreated = dateCreated
     }
 }
 

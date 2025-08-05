@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Save all journal entries to a file
 func saveJournalEntries() {
     let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     let jsonURL = directoryURL.appendingPathComponent("journal_entries.json")
@@ -33,6 +34,7 @@ func saveJournalEntries() {
     }
 }
 
+/// Load all journal entries from a file
 func loadJournalEntries() {
     let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     let jsonURL = directoryURL.appendingPathComponent("journal_entries.json")

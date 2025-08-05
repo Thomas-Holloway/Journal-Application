@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Entry-->
+        <!--Create Entry-->
         <scene sceneID="4iV-Uj-z5C">
             <objects>
-                <viewController id="WZo-OR-TeA" customClass="NewEntryViewController" customModule="Journal_Application" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Create Entry" id="WZo-OR-TeA" customClass="CreateEntryViewController" customModule="Journal_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bPG-FZ-YsK">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="156.71641791044775" y="134.55377574370709"/>
         </scene>
-        <!--View Controller-->
+        <!--New Entry-->
         <scene sceneID="KAR-Gz-Lo6">
             <objects>
-                <viewController id="QHq-E7-SY4" sceneMemberID="viewController">
+                <viewController title="New Entry" id="QHq-E7-SY4" customClass="NewEntryViewController" customModule="Journal_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="41p-HN-dJf">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,9 +92,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5xn-T5-MUJ">
-                                <rect key="frame" x="16" y="234" width="370" height="523"/>
+                                <rect key="frame" x="16" y="242" width="370" height="515"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -107,6 +108,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="btnEditDatePressed:" destination="QHq-E7-SY4" eventType="touchUpInside" id="M8F-RX-Me5"/>
                                     <segue destination="mrb-tZ-GRG" kind="show" id="7G6-1H-Ae0"/>
                                 </connections>
                             </button>
@@ -115,26 +117,41 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="xWn-3e-bYa"/>
+                    <connections>
+                        <outlet property="btnEditDate" destination="hMg-gh-XVB" id="fTz-RN-qb4"/>
+                        <outlet property="lblDate" destination="2FT-9p-Fq4" id="nfE-Fk-hX1"/>
+                        <outlet property="txfTitle" destination="q8b-1Q-Yed" id="4dT-xh-0bE"/>
+                        <outlet property="txvContent" destination="5xn-T5-MUJ" id="zce-pN-aC9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYv-uc-1fe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="989.55223880597009" y="134.55377574370709"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry Date Change-->
         <scene sceneID="CdP-Sk-LOW">
             <objects>
-                <viewController id="mrb-tZ-GRG" sceneMemberID="viewController">
+                <viewController title="Entry Date Change" id="mrb-tZ-GRG" customClass="EntryDateChangeViewController" customModule="Journal_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kQK-5p-SPx">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="15" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="Vmd-EZ-hJ2">
-                                <rect key="frame" x="16" y="224" width="370" height="493"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="15" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="Vmd-EZ-hJ2">
+                                <rect key="frame" x="41" y="256" width="321" height="362"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="362" id="brd-wK-pZ0"/>
+                                    <constraint firstAttribute="width" constant="321" id="f9c-CJ-ilY"/>
+                                </constraints>
                             </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wF0-PT-4q0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wF0-PT-4q0" firstAttribute="trailing" secondItem="Vmd-EZ-hJ2" secondAttribute="trailing" constant="40" id="19C-S6-Cla"/>
+                            <constraint firstItem="Vmd-EZ-hJ2" firstAttribute="leading" secondItem="wF0-PT-4q0" secondAttribute="leading" constant="41" id="VIb-ni-erq"/>
+                            <constraint firstItem="wF0-PT-4q0" firstAttribute="bottom" secondItem="Vmd-EZ-hJ2" secondAttribute="bottom" constant="139" id="W6b-fZ-ZRg"/>
+                            <constraint firstItem="Vmd-EZ-hJ2" firstAttribute="top" secondItem="wF0-PT-4q0" secondAttribute="top" constant="88" id="bcQ-hZ-9my"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g2Q-d8-Fgo"/>
                 </viewController>
@@ -142,10 +159,10 @@
             </objects>
             <point key="canvasLocation" x="1838.8059701492537" y="134.55377574370709"/>
         </scene>
-        <!--Search-->
+        <!--Entry Search-->
         <scene sceneID="acl-Tq-6jw">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="Vt0-bZ-fFm" sceneMemberID="viewController">
+                <viewController title="Entry Search" hidesBottomBarWhenPushed="YES" id="Vt0-bZ-fFm" customClass="EntrySearchViewController" customModule="Journal_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9tT-w1-NCr">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -171,7 +188,7 @@
         <!--Home-->
         <scene sceneID="SYc-5p-DVV">
             <objects>
-                <viewController id="Ruq-ue-rKc" customClass="HomeViewController" customModule="Journal_Application" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="Ruq-ue-rKc" customClass="HomeViewController" customModule="Journal_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fKT-k6-Ptb">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,10 +306,10 @@
             </objects>
             <point key="canvasLocation" x="156.71641791044775" y="-613.04347826086951"/>
         </scene>
-        <!--Entry View Controller-->
+        <!--Entry View-->
         <scene sceneID="Bwh-cq-duj">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="SKC-RX-r7b" customClass="EntryViewController" customModule="Journal_Application" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Entry View" hidesBottomBarWhenPushed="YES" id="SKC-RX-r7b" customClass="EntryViewController" customModule="Journal_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mOk-Ni-vIj">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -334,10 +351,10 @@
             </objects>
             <point key="canvasLocation" x="990" y="-613"/>
         </scene>
-        <!--Home-->
+        <!--Home Nav Controller-->
         <scene sceneID="Mj9-iN-YEe">
             <objects>
-                <navigationController id="XKk-rC-XzM" sceneMemberID="viewController">
+                <navigationController title="Home Nav Controller" id="XKk-rC-XzM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="rKO-AL-QvM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W88-Dy-Xuz">
                         <rect key="frame" x="0.0" y="124" width="402" height="44"/>
@@ -351,10 +368,10 @@
             </objects>
             <point key="canvasLocation" x="-649" y="-613"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--TabBar Controller-->
         <scene sceneID="vWo-ZV-fF2">
             <objects>
-                <tabBarController id="ZLX-qm-S3J" sceneMemberID="viewController">
+                <tabBarController title="TabBar Controller" id="ZLX-qm-S3J" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ns2-nb-8R9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -370,10 +387,10 @@
             </objects>
             <point key="canvasLocation" x="-1672" y="135"/>
         </scene>
-        <!--Statistics-->
+        <!--Statistics Nav Controller-->
         <scene sceneID="lOA-Kk-tWM">
             <objects>
-                <navigationController id="fya-WU-u8m" sceneMemberID="viewController">
+                <navigationController title="Statistics Nav Controller" id="fya-WU-u8m" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Statistics" image="chart.xyaxis.line" catalog="system" id="4Wd-gB-RVZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gE8-p7-oCW">
                         <rect key="frame" x="0.0" y="124" width="402" height="44"/>
@@ -387,10 +404,10 @@
             </objects>
             <point key="canvasLocation" x="-649" y="925"/>
         </scene>
-        <!--New Entry-->
+        <!--New Entry Nav Controller-->
         <scene sceneID="1Zh-Ix-FXL">
             <objects>
-                <navigationController id="jds-4U-1Cc" sceneMemberID="viewController">
+                <navigationController title="New Entry Nav Controller" id="jds-4U-1Cc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="New Entry" image="plus" catalog="system" id="KkR-Kv-j5a"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hP0-4n-aSu">
                         <rect key="frame" x="0.0" y="124" width="402" height="44"/>
@@ -407,7 +424,7 @@
         <!--Statistics-->
         <scene sceneID="nhq-5j-Fa7">
             <objects>
-                <viewController id="Ev1-Hx-3N7" customClass="StatisticsViewController" customModule="Journal_Application" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Statistics" id="Ev1-Hx-3N7" customClass="StatisticsViewController" customModule="Journal_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qXY-8a-Roz">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -532,7 +549,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -3,10 +3,16 @@
 
 
 ## To Do
--  
-
+- Set up UIDatePicker in Entry Date Change View
+- Implement search for Entry Search View
+- Create template new entry view
+- Implement saving new journal entry
+- Reload UICollectionView on file load
+- Set up statistics screen
+- 
 
 ## In Progress
+- !!! Add date property to JournalEntry
 - 
 
 
@@ -44,24 +50,27 @@ Validation
 ### YearlyReview: JournalEntry
     var year: Int
 
+## HomeCollectionViewCell: UICollectionViewCell
+    
+
 - - -
 
 # Views
 TabBar Controller
-├── Navigation Controller
+├── Home Nav Controller
 │   └── Home
 │       ├── Entry View
 │       └── Search
-├── Navigation Controller
+├── New Entry Nav Controller
 │   └── Create New Entry
 │       └── New Entry
 │           └── Entry Date Change
-└── Navigation Controller
+└── Statistics Nav Controller
     └── Statistics
 
 ## TabBar Controller
 
-### Navigation Controller
+### Home Nav Controller
 
 #### Home (HomeViewController)
 
@@ -69,7 +78,7 @@ TabBar Controller
 
 ##### Search (EntrySearchViewController)
 
-### Navigation Controller
+### New Entry Nav Controller
 
 #### Create New Entry (CreateEntryViewController)
 
@@ -77,6 +86,6 @@ TabBar Controller
 
 ##### Entry Date Change (EntryDateChangeViewController)
 
-### Navigation Controller
+### Statistics Nav Controller
 
 #### Statistics (StatisticsViewController)

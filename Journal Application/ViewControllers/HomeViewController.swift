@@ -18,11 +18,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var btnSearch: UIButton!
     
 // MARK: Testing Data
-    let entry1: JournalEntry = JournalEntry(title: "Entry 1", content: "This is the first entry! Blah blah blah blah, blah blah blah blah. Blah blah blah blah blah."/*, date: <#T##Date#>*/)
+    let entry1: JournalEntry = JournalEntry(title: "Entry 1", content: "This is the first entry! Blah blah blah blah, blah blah blah blah. Blah blah blah blah blah.", date: Date.now, dateCreated: Date.now)
     
-    let entry2: JournalEntry = JournalEntry(title: "Entry 2", content: "This is the second entry! Blah blah blah blah, blah blah blah blah. Blah blah blah blah blah. This is just some random text to fill up the space: gbhre bghjre kbgh jr eabl jg gb baerbj."/*, date: <#T##Date#>*/)
+    let entry2: JournalEntry = JournalEntry(title: "Entry 2", content: "This is the second entry! Blah blah blah blah, blah blah blah blah. Blah blah blah blah blah. This is just some random text to fill up the space: gbhre bghjre kbgh jr eabl jg gb baerbj.", date: Date.now, dateCreated: Date.now)
     
-    let entry3: JournalEntry = JournalEntry(title: "Entry 3", content: "This is the third entry! WOW, 3 entries!! This is so boring trying to write enough to test this program."/*, date: <#T##Date#>*/)
+    let entry3: JournalEntry = JournalEntry(title: "Entry 3", content: "This is the third entry! WOW, 3 entries!! This is so boring trying to write enough to test this program.", date: Date.now, dateCreated: Date.now)
     
 // MARK: override func viewDidLoad()
     override func viewDidLoad() {
@@ -76,6 +76,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         cell.txtTitle.text = "\(journal.title)"
         cell.txvContent.text = "\(journal.content)"
+        cell.txtDate.text = "\(journal.date.formatted())"
         
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
