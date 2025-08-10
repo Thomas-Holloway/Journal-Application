@@ -5,6 +5,7 @@
 //  Created by Thomas Holloway on 4/8/2025
 //  Swift 6.0, macOS 15.5
 
+/// AnyJournalEntry is used to make all the classes codeable
 enum AnyJournalEntry: Codable {
     case entry(JournalEntry)
     case weekReview(WeekReview)
@@ -23,6 +24,7 @@ enum AnyJournalEntry: Codable {
         case yearReview
     }
     
+    // MARK: - Decoding
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let type = try container.decode(EntryType.self, forKey: .type)
@@ -43,6 +45,7 @@ enum AnyJournalEntry: Codable {
         }
     }
     
+    // MARK: - Encoding
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
@@ -62,7 +65,7 @@ enum AnyJournalEntry: Codable {
         }
     }
     
-    // For easy access back to base class
+    // MARK: For easy access back to base class
     var base: JournalEntry {
         switch self {
         case .entry(let e): return e

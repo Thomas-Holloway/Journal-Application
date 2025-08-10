@@ -7,7 +7,15 @@
 
 import Foundation
 
-/// Week review
+/**
+ A class representing a weekly review entry.
+ 
+ Inherits from the JournalEntry class
+ 
+ - Parameters:
+    - week: The number of the week the review is created for
+    - year: The year the review is created for
+ */
 class WeekReview: JournalEntry {
     var week: Int
     var year: Int
@@ -18,6 +26,7 @@ class WeekReview: JournalEntry {
         super.init(title: title, content: content, date: date, dateCreated: dateCreated)
     }
     
+    //MARK: Decoding
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.week = try container.decode(Int.self, forKey: .week)
@@ -25,6 +34,7 @@ class WeekReview: JournalEntry {
         try super.init(from: decoder)
     }
     
+    //MARK: Encoding
     override func encode(to encoder: Encoder) throws {
         try super.encode(to: encoder)
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -32,6 +42,7 @@ class WeekReview: JournalEntry {
         try container.encode(year, forKey: .year)
     }
     
+    //MARK: Coding Keys
     private enum CodingKeys: String, CodingKey {
         case week
         case year

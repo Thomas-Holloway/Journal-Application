@@ -7,7 +7,14 @@
 
 import Foundation
 
-/// Year review
+/**
+ A class representing a yearly review entry.
+ 
+ Inherits from the JournalEntry class
+ 
+ - Parameters:
+    - year: The year the review is created for
+ */
 class YearReview: JournalEntry {
     var year: Int
     
@@ -16,18 +23,21 @@ class YearReview: JournalEntry {
         super.init(title: title, content: content, date: date, dateCreated: dateCreated)
     }
     
+    //MARK: Decoding
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.year = try container.decode(Int.self, forKey: .year)
         try super.init(from: decoder)
     }
     
+    //MARK: Encoding
     override func encode(to encoder: Encoder) throws {
         try super.encode(to: encoder)
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(year, forKey: .year)
     }
     
+    //MARK: Coding Keys
     private enum CodingKeys: String, CodingKey {
         case year
     }

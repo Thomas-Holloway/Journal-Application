@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-/// <#Description#>
+/// Custom class for the collection view cell on the main screen
 class HomeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var txtTitle: UILabel!

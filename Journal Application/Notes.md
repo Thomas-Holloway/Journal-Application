@@ -1,31 +1,21 @@
 #  Tasks
 
-
+All tasks to work on for this project
 
 ## To Do
-- Set up UIDatePicker in Entry Date Change View
-- Implement search for Entry Search View
-- Create template new entry view
-- Implement saving new journal entry
-- Reload UICollectionView on file load
-- Set up statistics screen
 - 
 
 ## In Progress
-- !!! Add date property to JournalEntry
 - 
-
 
 ## Completed
-- 
-
-
-- - -
-
-Validation
-- Existence check
-- Type check
-- Range check
+- Implement saving new journal entry
+- !!! Add date property to JournalEntry
+- Set up UIDatePicker in Entry Date Change View
+- Implement search for Entry Search View
+- Set up statistics screen
+- Pass date from EntryDateChangeViewController to NewEntryViewController
+- Internal Documentation
 
 - - -
 
@@ -67,25 +57,3 @@ TabBar Controller
 │           └── Entry Date Change
 └── Statistics Nav Controller
     └── Statistics
-
-## TabBar Controller
-
-### Home Nav Controller
-
-#### Home (HomeViewController)
-
-##### Entry View (EntryViewController)
-
-##### Search (EntrySearchViewController)
-
-### New Entry Nav Controller
-
-#### Create New Entry (CreateEntryViewController)
-
-##### New Entry (NewEntryViewController)
-
-##### Entry Date Change (EntryDateChangeViewController)
-
-### Statistics Nav Controller
-
-#### Statistics (StatisticsViewController)

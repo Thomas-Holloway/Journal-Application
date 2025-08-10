@@ -12,11 +12,11 @@ import UIKit
 /// Recieves information about the journal entry to display from the Home View
 class EntryViewController: UIViewController {
     
-    /// <#Description#>
+    /// The journal entry to be views
     var journalEntry: JournalEntry?
-    /// <#Description#>
+    /// The index of the journal entry in the journalEntries array
     var entryIndex: Int?
-    /// <#Description#>
+    /// Delegate
     weak var delegate: EntryViewControllerDelegate?
     
     @IBOutlet weak var txfEntryTitle: UITextField!
@@ -24,7 +24,6 @@ class EntryViewController: UIViewController {
     @IBOutlet weak var txvEntryContent: UITextView!
     
 // MARK: override func viewDidLoad()
-    /// <#Description#>
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,7 +53,7 @@ class EntryViewController: UIViewController {
     }
 
 // MARK: override func viewWillDisappear(_ animated: Bool)
-    /// <#Description#>
+    /// Sends the updated entry back to the home page
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -70,8 +69,6 @@ class EntryViewController: UIViewController {
 }
 
 // MARK: protocol EntryViewControllerDelegate: AnyObject
-
-/// <#Description#>
 protocol EntryViewControllerDelegate: AnyObject {
     func didUpdateJournalEntry(_ entry: JournalEntry, at index: Int)
 }

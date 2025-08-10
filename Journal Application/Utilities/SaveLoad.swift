@@ -20,6 +20,10 @@ func saveJournalEntries() {
         let wrappedEntries = journalEntries.map { entry in
             if let yearReview = entry as? YearReview {
                 return AnyJournalEntry.yearReview(yearReview)
+            } else if let monthReview = entry as? MonthReview {
+                return AnyJournalEntry.monthReview(monthReview)
+            } else if let weekReview = entry as? WeekReview {
+                return AnyJournalEntry.weekReview(weekReview)
             } else {
                 return AnyJournalEntry.entry(entry)
             }
@@ -28,7 +32,6 @@ func saveJournalEntries() {
         let jsonData = try encoder.encode(wrappedEntries)
         try jsonData.write(to: jsonURL, options: .atomic)
         print("Journal entries saved successfully.")
-//        print(jsonURL)
     } catch {
         print("Error saving journal entries:", error)
     }
